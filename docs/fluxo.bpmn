@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" targetNamespace="https://fiap.com.br/citizentech/boca-de-lobo" id="defs_boca_de_lobo">
+  <process id="processo_boca_de_lobo" name="Boca de Lobo - fluxo diário" isExecutable="false">
+    <startEvent id="ini" name="Agendador 06h"></startEvent>
+    <task id="t_prev" name="Consultar previsão (API, retry, cache)"></task>
+    <exclusiveGateway id="g_prev" name="Previsão obtida?"></exclusiveGateway>
+    <task id="t_cls" name="Classificar chuva (limiar e prob.)"></task>
+    <exclusiveGateway id="g_chuva" name="Chuva acima do limite?"></exclusiveGateway>
+    <task id="t_dados" name="Ler e validar CSVs de entrada"></task>
+    <exclusiveGateway id="g_dados" name="Arquivos válidos?"></exclusiveGateway>
+    <task id="t_f1" name="Registrar FALHA_PREVISAO e avisar operação"></task>
+    <endEvent id="e_f1" name="Falha (exit 2)"><errorEventDefinition id="err_e_f1"/></endEvent>
+    <task id="t_sem" name="Registrar SEM_ACAO e exportar ao MVP"></task>
+    <endEvent id="e_sem" name="Fim (sem ação)"></endEvent>
+    <task id="t_f2" name="Registrar FALHA_DADOS e avisar operação"></task>
+    <endEvent id="e_f2" name="Falha (exit 3)"><errorEventDefinition id="err_e_f2"/></endEvent>
+    <task id="t_insp" name="Isolar inspeções inválidas/duplicadas"><multiInstanceLoopCharacteristics isSequential="true"/></task>
+    <task id="t_prio" name="Classificar, pontuar e ordenar bueiros"><multiInstanceLoopCharacteristics isSequential="true"/></task>
+    <task id="t_alert" name="Gerar alertas (equipe e bairros)"><multiInstanceLoopCharacteristics isSequential="true"/></task>
+    <exclusiveGateway id="g_env" name="Já enviado?"></exclusiveGateway>
+    <task id="t_env" name="Enviar por canal (arquivo/webhook)"><multiInstanceLoopCharacteristics isSequential="true"/></task>
+    <task id="t_pers" name="Persistir SQLite e exportar JSON/CSV"></task>
+    <endEvent id="e_fim" name="MVP consome resultados"></endEvent>
+    <sequenceFlow id="fluxo_1" sourceRef="ini" targetRef="t_prev"/>
+    <sequenceFlow id="fluxo_2" sourceRef="t_prev" targetRef="g_prev"/>
+    <sequenceFlow id="fluxo_3" name="sim" sourceRef="g_prev" targetRef="t_cls"/>
+    <sequenceFlow id="fluxo_4" name="não" sourceRef="g_prev" targetRef="t_f1"/>
+    <sequenceFlow id="fluxo_5" sourceRef="t_f1" targetRef="e_f1"/>
+    <sequenceFlow id="fluxo_6" sourceRef="t_cls" targetRef="g_chuva"/>
+    <sequenceFlow id="fluxo_7" name="sim" sourceRef="g_chuva" targetRef="t_dados"/>
+    <sequenceFlow id="fluxo_8" name="não" sourceRef="g_chuva" targetRef="t_sem"/>
+    <sequenceFlow id="fluxo_9" sourceRef="t_sem" targetRef="e_sem"/>
+    <sequenceFlow id="fluxo_10" sourceRef="t_dados" targetRef="g_dados"/>
+    <sequenceFlow id="fluxo_11" name="não" sourceRef="g_dados" targetRef="t_f2"/>
+    <sequenceFlow id="fluxo_12" sourceRef="t_f2" targetRef="e_f2"/>
+    <sequenceFlow id="fluxo_13" name="sim" sourceRef="g_dados" targetRef="t_insp"/>
+    <sequenceFlow id="fluxo_14" sourceRef="t_insp" targetRef="t_prio"/>
+    <sequenceFlow id="fluxo_15" sourceRef="t_prio" targetRef="t_alert"/>
+    <sequenceFlow id="fluxo_16" sourceRef="t_alert" targetRef="g_env"/>
+    <sequenceFlow id="fluxo_17" name="não" sourceRef="g_env" targetRef="t_env"/>
+    <sequenceFlow id="fluxo_18" name="sim" sourceRef="g_env" targetRef="t_pers"/>
+    <sequenceFlow id="fluxo_19" sourceRef="t_env" targetRef="t_pers"/>
+    <sequenceFlow id="fluxo_20" sourceRef="t_pers" targetRef="e_fim"/>
+  </process>
+  <bpmndi:BPMNDiagram id="diagrama_1">
+    <bpmndi:BPMNPlane id="plano_1" bpmnElement="processo_boca_de_lobo">
+      <bpmndi:BPMNShape id="shape_ini" bpmnElement="ini"><dc:Bounds x="70" y="320" width="40" height="40"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_t_prev" bpmnElement="t_prev"><dc:Bounds x="205" y="308" width="150" height="64"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_g_prev" bpmnElement="g_prev" isMarkerVisible="true"><dc:Bounds x="440" y="310" width="60" height="60"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_t_cls" bpmnElement="t_cls"><dc:Bounds x="585" y="308" width="150" height="64"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_g_chuva" bpmnElement="g_chuva" isMarkerVisible="true"><dc:Bounds x="820" y="310" width="60" height="60"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_t_dados" bpmnElement="t_dados"><dc:Bounds x="965" y="308" width="150" height="64"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_g_dados" bpmnElement="g_dados" isMarkerVisible="true"><dc:Bounds x="1200" y="310" width="60" height="60"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_t_f1" bpmnElement="t_f1"><dc:Bounds x="395" y="158" width="150" height="64"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_e_f1" bpmnElement="e_f1"><dc:Bounds x="450" y="40" width="40" height="40"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_t_sem" bpmnElement="t_sem"><dc:Bounds x="775" y="158" width="150" height="64"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_e_sem" bpmnElement="e_sem"><dc:Bounds x="830" y="40" width="40" height="40"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_t_f2" bpmnElement="t_f2"><dc:Bounds x="1155" y="158" width="150" height="64"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_e_f2" bpmnElement="e_f2"><dc:Bounds x="1210" y="40" width="40" height="40"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_t_insp" bpmnElement="t_insp"><dc:Bounds x="1155" y="458" width="150" height="64"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_t_prio" bpmnElement="t_prio"><dc:Bounds x="965" y="458" width="150" height="64"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_t_alert" bpmnElement="t_alert"><dc:Bounds x="775" y="458" width="150" height="64"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_g_env" bpmnElement="g_env" isMarkerVisible="true"><dc:Bounds x="630" y="460" width="60" height="60"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_t_env" bpmnElement="t_env"><dc:Bounds x="395" y="458" width="150" height="64"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_t_pers" bpmnElement="t_pers"><dc:Bounds x="205" y="458" width="150" height="64"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_e_fim" bpmnElement="e_fim"><dc:Bounds x="70" y="470" width="40" height="40"/></bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge_fluxo_1" bpmnElement="fluxo_1"><di:waypoint x="110" y="340"/><di:waypoint x="205" y="340"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_fluxo_2" bpmnElement="fluxo_2"><di:waypoint x="355" y="340"/><di:waypoint x="440" y="340"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_fluxo_3" bpmnElement="fluxo_3"><di:waypoint x="500" y="340"/><di:waypoint x="585" y="340"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_fluxo_4" bpmnElement="fluxo_4"><di:waypoint x="470" y="310"/><di:waypoint x="470" y="222"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_fluxo_5" bpmnElement="fluxo_5"><di:waypoint x="470" y="158"/><di:waypoint x="470" y="80"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_fluxo_6" bpmnElement="fluxo_6"><di:waypoint x="735" y="340"/><di:waypoint x="820" y="340"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_fluxo_7" bpmnElement="fluxo_7"><di:waypoint x="880" y="340"/><di:waypoint x="965" y="340"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_fluxo_8" bpmnElement="fluxo_8"><di:waypoint x="850" y="310"/><di:waypoint x="850" y="222"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_fluxo_9" bpmnElement="fluxo_9"><di:waypoint x="850" y="158"/><di:waypoint x="850" y="80"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_fluxo_10" bpmnElement="fluxo_10"><di:waypoint x="1115" y="340"/><di:waypoint x="1200" y="340"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_fluxo_11" bpmnElement="fluxo_11"><di:waypoint x="1230" y="310"/><di:waypoint x="1230" y="222"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_fluxo_12" bpmnElement="fluxo_12"><di:waypoint x="1230" y="158"/><di:waypoint x="1230" y="80"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_fluxo_13" bpmnElement="fluxo_13"><di:waypoint x="1230" y="370"/><di:waypoint x="1230" y="458"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_fluxo_14" bpmnElement="fluxo_14"><di:waypoint x="1155" y="490"/><di:waypoint x="1115" y="490"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_fluxo_15" bpmnElement="fluxo_15"><di:waypoint x="965" y="490"/><di:waypoint x="925" y="490"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_fluxo_16" bpmnElement="fluxo_16"><di:waypoint x="775" y="490"/><di:waypoint x="690" y="490"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_fluxo_17" bpmnElement="fluxo_17"><di:waypoint x="630" y="490"/><di:waypoint x="545" y="490"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_fluxo_18" bpmnElement="fluxo_18"><di:waypoint x="660" y="520"/><di:waypoint x="660" y="585"/><di:waypoint x="280" y="585"/><di:waypoint x="280" y="522"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_fluxo_19" bpmnElement="fluxo_19"><di:waypoint x="395" y="490"/><di:waypoint x="355" y="490"/></bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_fluxo_20" bpmnElement="fluxo_20"><di:waypoint x="205" y="490"/><di:waypoint x="110" y="490"/></bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

@@ -1,0 +1,5 @@
+linha,bueiro_id,motivo
+14,BUEIRO-900,Visão: imagem_ausente: nao_existe.jpg
+15,BUEIRO-901,Visão: area_desconhecida: AREA-INEXISTENTE
+16,BUEIRO-902,Visão: caminho_invalido: ../fora_da_pasta.jpg
+17,BUEIRO-001,Visão: ativo_duplicado

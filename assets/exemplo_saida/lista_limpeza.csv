@@ -1,0 +1,6 @@
+posicao,bueiro_id,bairro,logradouro,entupimento_pct,classe,score,equipe,dentro_da_capacidade,human_approval_required
+1,BUEIRO-008,Setor periferico C (simulado),Referência da inspeção: test_0027_IMG_20250627_181511_jpg.rf.ff8b598c4c3d014c27cebc825a7f19f6.jpg,41.3,PARCIAL,50.6,1,True,True
+2,BUEIRO-012,Setor baixo A (simulado),Referência da inspeção: test_0022_IMG_0978_jpg.rf.cc9203a05d55161e94e336c2ff9b6f07.jpg,10.0,PARCIAL,35.0,2,True,True
+3,BUEIRO-007,Setor medio B (simulado),Referência da inspeção: test_0033_IMG_20250627_182743_jpg.rf.4b00e5cc87833788d3f95ea1a24a1ecf.jpg,26.4,PARCIAL,25.2,1,True,True
+4,BUEIRO-001,Setor medio B (simulado),Referência da inspeção: test_0092_IMG_7883-1-_JPG.rf.621edef2d7fa7727f58af016d6ac3934.jpg,10.0,PARCIAL,17.0,2,True,True
+5,BUEIRO-010,Setor medio B (simulado),Referência da inspeção: test_0026_IMG_20250627_181332_jpg.rf.44d0f033d87994063be0ec06033c6f13.jpg,10.0,PARCIAL,17.0,1,True,True

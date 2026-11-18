@@ -1,0 +1,4 @@
+area_id,area_name,high_risk,latitude,longitude
+AREA-A,Setor baixo A (simulado),true,-23.55,-46.63
+AREA-B,Setor medio B (simulado),false,-23.60,-46.70
+AREA-C,Setor periferico C (simulado),true,-23.68,-46.78

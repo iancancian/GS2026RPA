@@ -1,0 +1,39 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-9.2.0, pluggy-1.6.0 -- C:\Users\LOCAL_ADM\AppData\Local\Programs\Python\Python312\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\LOCAL_ADM\Desktop\RPA
+configfile: pyproject.toml
+testpaths: tests
+plugins: anyio-4.13.0
+collecting ... collected 28 items
+
+tests/test_forecast.py::test_resumir_tempestade PASSED                   [  3%]
+tests/test_forecast.py::test_classificar_niveis PASSED                   [  7%]
+tests/test_forecast.py::test_pico_horario_aciona_mesmo_com_total_baixo PASSED [ 10%]
+tests/test_forecast.py::test_chuva_baixa_ou_improvavel_nao_aciona PASSED [ 14%]
+tests/test_forecast.py::test_janela_insuficiente_falha PASSED            [ 17%]
+tests/test_forecast.py::test_inicio_local_aplica_fuso PASSED             [ 21%]
+tests/test_forecast.py::test_api_com_retentativas_e_falha_final PASSED   [ 25%]
+tests/test_forecast.py::test_fallback_para_cache_e_falha_quando_expirado PASSED [ 28%]
+tests/test_inspection_prioritizer.py::test_validacao_rejeita_linhas_invalidas_sem_interromper PASSED [ 32%]
+tests/test_inspection_prioritizer.py::test_duplicadas_mantem_a_mais_recente PASSED [ 35%]
+tests/test_inspection_prioritizer.py::test_arquivo_ausente_e_colunas_faltando PASSED [ 39%]
+tests/test_inspection_prioritizer.py::test_classificacao_e_score PASSED  [ 42%]
+tests/test_inspection_prioritizer.py::test_lista_ordenada_capacidade_e_sem_inspecao PASSED [ 46%]
+tests/test_inspection_prioritizer.py::test_capacidade_limita_bueiros_acionados PASSED [ 50%]
+tests/test_pipeline.py::test_tempestade_gera_lista_alertas_e_exportacoes PASSED [ 53%]
+tests/test_pipeline.py::test_dia_seco_nao_dispara_alertas PASSED         [ 57%]
+tests/test_pipeline.py::test_segunda_execucao_nao_duplica_alertas PASSED [ 60%]
+tests/test_pipeline.py::test_dry_run_nao_grava_nem_envia PASSED          [ 64%]
+tests/test_pipeline.py::test_webhook_exige_aprovacao_humana_explicita PASSED [ 67%]
+tests/test_pipeline.py::test_falha_de_canal_nao_impede_outros_e_nao_marca_como_enviado PASSED [ 71%]
+tests/test_pipeline.py::test_api_fora_sem_cache_registra_falha_e_avisa_operacao PASSED [ 75%]
+tests/test_pipeline.py::test_arquivo_de_inspecoes_ausente_e_falha_explicita PASSED [ 78%]
+tests/test_pipeline.py::test_api_do_mvp_serve_resultado_do_robo PASSED   [ 82%]
+tests/test_vision_integration.py::test_contrato_real_da_visao_e_convertido_para_domínio_rpa PASSED [ 85%]
+tests/test_vision_integration.py::test_cobertura_visual_preserva_limites_da_visao PASSED [ 89%]
+tests/test_vision_integration.py::test_fila_visao_malformada_falha_explicitamente PASSED [ 92%]
+tests/test_vision_integration.py::test_pipeline_consume_visao_e_emite_rascunhos_sem_endereco_ficticio PASSED [ 96%]
+tests/test_vision_integration.py::test_areas_incompativeis_sao_rejeitadas_com_erro_claro PASSED [100%]
+
+============================= 28 passed in 2.00s ==============================

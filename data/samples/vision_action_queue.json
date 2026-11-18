@@ -1,0 +1,350 @@
+{
+  "schema_version": "1.0",
+  "run_id": "84a4dd52-272e-4af4-a199-6d9ff8dcc486",
+  "generated_at": "2026-11-17T19:56:42.030764+00:00",
+  "summary": {
+    "total_registros": 16,
+    "processados": 12,
+    "rejeitados": 4,
+    "areas_sem_previsao": 0,
+    "por_prioridade": {
+      "programada": 5,
+      "revisao_manual": 3,
+      "sem_acao_sugerida": 4
+    }
+  },
+  "items": [
+    {
+      "asset_id": "BUEIRO-001",
+      "area_id": "AREA-B",
+      "image_file": "test_0092_IMG_7883-1-_JPG.rf.621edef2d7fa7727f58af016d6ac3934.jpg",
+      "forecast_status": "ok",
+      "assessment": {
+        "maintenance_priority": "programada",
+        "resident_warning_recommended": false,
+        "human_approval_required": true,
+        "drain_count": 1,
+        "drains": [
+          {
+            "drain_index": 0,
+            "obstruction_coverage": 0.059,
+            "state": "sem_obstrucao_visivel",
+            "materials": [
+              "lixo",
+              "pedra"
+            ]
+          }
+        ],
+        "obstruction_outside_drain_count": 1,
+        "reason": {
+          "strong_rain": false,
+          "risk_area": false,
+          "limitations": "Cobertura estimada por caixas 2D; nao mede a obstrucao interna. Confirmar em campo."
+        }
+      }
+    },
+    {
+      "asset_id": "BUEIRO-007",
+      "area_id": "AREA-B",
+      "image_file": "test_0033_IMG_20250627_182743_jpg.rf.4b00e5cc87833788d3f95ea1a24a1ecf.jpg",
+      "forecast_status": "ok",
+      "assessment": {
+        "maintenance_priority": "programada",
+        "resident_warning_recommended": false,
+        "human_approval_required": true,
+        "drain_count": 1,
+        "drains": [
+          {
+            "drain_index": 0,
+            "obstruction_coverage": 0.264,
+            "state": "parcialmente_obstruido",
+            "materials": [
+              "folha",
+              "lixo"
+            ]
+          }
+        ],
+        "obstruction_outside_drain_count": 0,
+        "reason": {
+          "strong_rain": false,
+          "risk_area": false,
+          "limitations": "Cobertura estimada por caixas 2D; nao mede a obstrucao interna. Confirmar em campo."
+        }
+      }
+    },
+    {
+      "asset_id": "BUEIRO-008",
+      "area_id": "AREA-C",
+      "image_file": "test_0027_IMG_20250627_181511_jpg.rf.ff8b598c4c3d014c27cebc825a7f19f6.jpg",
+      "forecast_status": "ok",
+      "assessment": {
+        "maintenance_priority": "programada",
+        "resident_warning_recommended": false,
+        "human_approval_required": true,
+        "drain_count": 1,
+        "drains": [
+          {
+            "drain_index": 0,
+            "obstruction_coverage": 0.413,
+            "state": "parcialmente_obstruido",
+            "materials": [
+              "folha",
+              "lixo"
+            ]
+          }
+        ],
+        "obstruction_outside_drain_count": 0,
+        "reason": {
+          "strong_rain": false,
+          "risk_area": true,
+          "limitations": "Cobertura estimada por caixas 2D; nao mede a obstrucao interna. Confirmar em campo."
+        }
+      }
+    },
+    {
+      "asset_id": "BUEIRO-010",
+      "area_id": "AREA-B",
+      "image_file": "test_0026_IMG_20250627_181332_jpg.rf.44d0f033d87994063be0ec06033c6f13.jpg",
+      "forecast_status": "ok",
+      "assessment": {
+        "maintenance_priority": "programada",
+        "resident_warning_recommended": false,
+        "human_approval_required": true,
+        "drain_count": 1,
+        "drains": [
+          {
+            "drain_index": 0,
+            "obstruction_coverage": 0.046,
+            "state": "sem_obstrucao_visivel",
+            "materials": [
+              "folha"
+            ]
+          }
+        ],
+        "obstruction_outside_drain_count": 3,
+        "reason": {
+          "strong_rain": false,
+          "risk_area": false,
+          "limitations": "Cobertura estimada por caixas 2D; nao mede a obstrucao interna. Confirmar em campo."
+        }
+      }
+    },
+    {
+      "asset_id": "BUEIRO-012",
+      "area_id": "AREA-A",
+      "image_file": "test_0022_IMG_0978_jpg.rf.cc9203a05d55161e94e336c2ff9b6f07.jpg",
+      "forecast_status": "ok",
+      "assessment": {
+        "maintenance_priority": "programada",
+        "resident_warning_recommended": false,
+        "human_approval_required": true,
+        "drain_count": 1,
+        "drains": [
+          {
+            "drain_index": 0,
+            "obstruction_coverage": 0.0,
+            "state": "sem_obstrucao_visivel",
+            "materials": []
+          }
+        ],
+        "obstruction_outside_drain_count": 3,
+        "reason": {
+          "strong_rain": false,
+          "risk_area": true,
+          "limitations": "Cobertura estimada por caixas 2D; nao mede a obstrucao interna. Confirmar em campo."
+        }
+      }
+    },
+    {
+      "asset_id": "BUEIRO-002",
+      "area_id": "AREA-C",
+      "image_file": "test_0031_IMG_20250627_182501_jpg.rf.eecfc73d5a8cfd2063e4e405a0c37d5c.jpg",
+      "forecast_status": "ok",
+      "assessment": {
+        "maintenance_priority": "revisao_manual",
+        "resident_warning_recommended": false,
+        "human_approval_required": true,
+        "drain_count": 0,
+        "drains": [],
+        "obstruction_outside_drain_count": 0,
+        "reason": {
+          "strong_rain": false,
+          "risk_area": true,
+          "limitations": "Nenhum bueiro detectado; confirmar em campo. Ausencia de deteccao nao significa bueiro livre."
+        }
+      }
+    },
+    {
+      "asset_id": "BUEIRO-004",
+      "area_id": "AREA-B",
+      "image_file": "test_0049_IMG_20250911_163846_jpg.rf.904cabbb90d50e0ab6f827dc6eceddfa.jpg",
+      "forecast_status": "ok",
+      "assessment": {
+        "maintenance_priority": "revisao_manual",
+        "resident_warning_recommended": false,
+        "human_approval_required": true,
+        "drain_count": 0,
+        "drains": [],
+        "obstruction_outside_drain_count": 1,
+        "reason": {
+          "strong_rain": false,
+          "risk_area": false,
+          "limitations": "Nenhum bueiro detectado; confirmar em campo. Ausencia de deteccao nao significa bueiro livre."
+        }
+      }
+    },
+    {
+      "asset_id": "BUEIRO-011",
+      "area_id": "AREA-C",
+      "image_file": "test_0072_IMG_6161_JPG.rf.37236d1ef374d6e35313958bf2707343.jpg",
+      "forecast_status": "ok",
+      "assessment": {
+        "maintenance_priority": "revisao_manual",
+        "resident_warning_recommended": false,
+        "human_approval_required": true,
+        "drain_count": 0,
+        "drains": [],
+        "obstruction_outside_drain_count": 0,
+        "reason": {
+          "strong_rain": false,
+          "risk_area": true,
+          "limitations": "Nenhum bueiro detectado; confirmar em campo. Ausencia de deteccao nao significa bueiro livre."
+        }
+      }
+    },
+    {
+      "asset_id": "BUEIRO-003",
+      "area_id": "AREA-A",
+      "image_file": "test_0021_IMG_0970_jpg.rf.8462c8513d037063f72e62ca29b6abd3.jpg",
+      "forecast_status": "ok",
+      "assessment": {
+        "maintenance_priority": "sem_acao_sugerida",
+        "resident_warning_recommended": false,
+        "human_approval_required": true,
+        "drain_count": 1,
+        "drains": [
+          {
+            "drain_index": 0,
+            "obstruction_coverage": 0.0,
+            "state": "sem_obstrucao_visivel",
+            "materials": []
+          }
+        ],
+        "obstruction_outside_drain_count": 0,
+        "reason": {
+          "strong_rain": false,
+          "risk_area": true,
+          "limitations": "Cobertura estimada por caixas 2D; nao mede a obstrucao interna. Confirmar em campo."
+        }
+      }
+    },
+    {
+      "asset_id": "BUEIRO-005",
+      "area_id": "AREA-C",
+      "image_file": "test_0045_IMG_20250911_160451_jpg.rf.3e7fbb4ce2de6e52c37716f40f677166.jpg",
+      "forecast_status": "ok",
+      "assessment": {
+        "maintenance_priority": "sem_acao_sugerida",
+        "resident_warning_recommended": false,
+        "human_approval_required": true,
+        "drain_count": 1,
+        "drains": [
+          {
+            "drain_index": 0,
+            "obstruction_coverage": 0.055,
+            "state": "sem_obstrucao_visivel",
+            "materials": [
+              "lixo"
+            ]
+          }
+        ],
+        "obstruction_outside_drain_count": 0,
+        "reason": {
+          "strong_rain": false,
+          "risk_area": true,
+          "limitations": "Cobertura estimada por caixas 2D; nao mede a obstrucao interna. Confirmar em campo."
+        }
+      }
+    },
+    {
+      "asset_id": "BUEIRO-006",
+      "area_id": "AREA-A",
+      "image_file": "test_0044_IMG_20250911_160433_jpg.rf.3297cc08b9db442b29180a0ba7221649.jpg",
+      "forecast_status": "ok",
+      "assessment": {
+        "maintenance_priority": "sem_acao_sugerida",
+        "resident_warning_recommended": false,
+        "human_approval_required": true,
+        "drain_count": 1,
+        "drains": [
+          {
+            "drain_index": 0,
+            "obstruction_coverage": 0.077,
+            "state": "sem_obstrucao_visivel",
+            "materials": [
+              "lixo"
+            ]
+          }
+        ],
+        "obstruction_outside_drain_count": 0,
+        "reason": {
+          "strong_rain": false,
+          "risk_area": true,
+          "limitations": "Cobertura estimada por caixas 2D; nao mede a obstrucao interna. Confirmar em campo."
+        }
+      }
+    },
+    {
+      "asset_id": "BUEIRO-009",
+      "area_id": "AREA-A",
+      "image_file": "test_0082_IMG_6259_JPG.rf.cbbfa39386f80b955708612c8cfd6d6e.jpg",
+      "forecast_status": "ok",
+      "assessment": {
+        "maintenance_priority": "sem_acao_sugerida",
+        "resident_warning_recommended": false,
+        "human_approval_required": true,
+        "drain_count": 1,
+        "drains": [
+          {
+            "drain_index": 0,
+            "obstruction_coverage": 0.0,
+            "state": "sem_obstrucao_visivel",
+            "materials": []
+          }
+        ],
+        "obstruction_outside_drain_count": 0,
+        "reason": {
+          "strong_rain": false,
+          "risk_area": true,
+          "limitations": "Cobertura estimada por caixas 2D; nao mede a obstrucao interna. Confirmar em campo."
+        }
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "line": "14",
+      "asset_id": "BUEIRO-900",
+      "reason": "imagem_ausente",
+      "detail": "nao_existe.jpg"
+    },
+    {
+      "line": "15",
+      "asset_id": "BUEIRO-901",
+      "reason": "area_desconhecida",
+      "detail": "AREA-INEXISTENTE"
+    },
+    {
+      "line": "16",
+      "asset_id": "BUEIRO-902",
+      "reason": "caminho_invalido",
+      "detail": "../fora_da_pasta.jpg"
+    },
+    {
+      "line": "17",
+      "asset_id": "BUEIRO-001",
+      "reason": "ativo_duplicado",
+      "detail": ""
+    }
+  ]
+}

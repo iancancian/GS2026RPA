@@ -1,0 +1,17 @@
+2026-11-18 17:04:50,718 INFO    bocadelobo.pipeline | === Execução Boca de Lobo | data_ref=2026-11-17 | regras v1.0 | dry_run=False ===
+2026-11-18 17:04:50,718 INFO    bocadelobo.pipeline | [1/5] Obtendo previsão de chuva
+2026-11-18 17:04:50,718 INFO    bocadelobo.pipeline | Previsão (arquivo:previsao_tempestade.json): 73.0 mm/24h, pico 21.0 mm/h, prob. 92% -> nível ALERTA
+2026-11-18 17:04:50,718 INFO    bocadelobo.pipeline | [2/5] Carregando e validando dados
+2026-11-18 17:04:50,726 INFO    bocadelobo.vision_input | Entrada Visão: 12 itens, 4 rejeitados, 3 sem bueiro detectado.
+2026-11-18 17:04:50,726 WARNING bocadelobo.pipeline | Inspeção rejeitada (linha 14, BUEIRO-900): Visão: imagem_ausente: nao_existe.jpg
+2026-11-18 17:04:50,726 WARNING bocadelobo.pipeline | Inspeção rejeitada (linha 15, BUEIRO-901): Visão: area_desconhecida: AREA-INEXISTENTE
+2026-11-18 17:04:50,726 WARNING bocadelobo.pipeline | Inspeção rejeitada (linha 16, BUEIRO-902): Visão: caminho_invalido: ../fora_da_pasta.jpg
+2026-11-18 17:04:50,726 WARNING bocadelobo.pipeline | Inspeção rejeitada (linha 17, BUEIRO-001): Visão: ativo_duplicado
+2026-11-18 17:04:50,726 INFO    bocadelobo.pipeline | [3/5] Priorizando bueiros
+2026-11-18 17:04:50,726 WARNING bocadelobo.pipeline | 3 bueiro(s) sem inspeção válida: vistoria necessária (BUEIRO-002, BUEIRO-004, BUEIRO-011)
+2026-11-18 17:04:50,726 INFO    bocadelobo.pipeline | [4/5] Gerando e despachando alertas
+2026-11-18 17:04:50,726 INFO    bocadelobo.alerts | Alerta já enviado, ignorado: 2026-11-17|equipe|TODOS|ALERTA via arquivo
+2026-11-18 17:04:50,726 INFO    bocadelobo.alerts | Alerta já enviado, ignorado: 2026-11-17|moradores|Setor baixo A (simulado)|ALERTA via arquivo
+2026-11-18 17:04:50,728 INFO    bocadelobo.alerts | Alerta já enviado, ignorado: 2026-11-17|moradores|Setor periferico C (simulado)|ALERTA via arquivo
+2026-11-18 17:04:50,728 INFO    bocadelobo.pipeline | [5/5] Persistindo e exportando para o MVP
+2026-11-18 17:04:50,746 INFO    bocadelobo.pipeline | Concluído: status=RASCUNHOS_GERADOS prioridades=5 (críticos=0) rejeições=4 rascunhos/entregas=0 duplicados=3 falhas=0

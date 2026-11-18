@@ -1,0 +1,29 @@
+{
+  "versao": "1.0",
+  "chuva": {
+    "limiar_mm_24h": 30,
+    "alerta_mm_24h": 60,
+    "emergencia_mm_24h": 100,
+    "pico_horario_mm": 20,
+    "prob_minima_pct": 60,
+    "cache_max_horas": 6
+  },
+  "entupimento": {
+    "parcial_pct": 10,
+    "critico_pct": 80,
+    "validade_inspecao_dias": 7
+  },
+  "pesos": {
+    "entupimento": 0.5,
+    "risco_area": 0.3,
+    "historico": 0.2,
+    "bonus_equipamento_sensivel": 10
+  },
+  "capacidade": {
+    "equipes": 2,
+    "bueiros_por_equipe_dia": 6
+  },
+  "alerta_moradores": {
+    "nivel_risco_minimo_area": 4
+  }
+}

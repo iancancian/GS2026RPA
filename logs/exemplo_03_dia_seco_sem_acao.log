@@ -1,0 +1,6 @@
+2026-11-18 17:04:51,079 INFO    bocadelobo.pipeline | === Execução Boca de Lobo | data_ref=2026-11-17 | regras v1.0 | dry_run=False ===
+2026-11-18 17:04:51,121 INFO    bocadelobo.pipeline | [1/5] Obtendo previsão de chuva
+2026-11-18 17:04:51,121 INFO    bocadelobo.pipeline | Previsão (arquivo:previsao_seco.json): 5.5 mm/24h, pico 2.0 mm/h, prob. 35% -> nível NENHUM
+2026-11-18 17:04:51,121 INFO    bocadelobo.pipeline | Chuva abaixo do limite: nenhuma ação necessária hoje.
+2026-11-18 17:04:51,121 INFO    bocadelobo.pipeline | [5/5] Persistindo e exportando para o MVP
+2026-11-18 17:04:51,134 INFO    bocadelobo.pipeline | Concluído: status=SEM_ACAO prioridades=0 (críticos=0) rejeições=0 rascunhos/entregas=0 duplicados=0 falhas=0

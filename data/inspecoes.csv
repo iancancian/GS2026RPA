@@ -1,0 +1,42 @@
+bueiro_id,data_inspecao,entupimento_pct,tipo_residuo,origem
+BL-001,2026-11-12,46,entulho,vistoria_equipe
+BL-002,2026-11-12,19,lixo plástico,visao_computacional
+BL-003,2026-11-12,78,folhas e lixo,visao_computacional
+BL-004,2026-11-15,58,lixo plástico,visao_computacional
+BL-005,2026-11-17,21,folhas,vistoria_equipe
+BL-006,2026-11-17,95,entulho,visao_computacional
+BL-007,2026-11-14,82,entulho,visao_computacional
+BL-008,2026-10-30,13,folhas,visao_computacional
+BL-009,2026-11-12,57,sedimento,vistoria_equipe
+BL-010,2026-11-17,53,folhas,visao_computacional
+BL-011,2026-11-12,78,lixo plástico,visao_computacional
+BL-012,2026-11-14,97,sedimento,visao_computacional
+BL-013,2026-11-12,21,sedimento,vistoria_equipe
+BL-014,2026-11-17,22,folhas e lixo,visao_computacional
+BL-015,2026-11-16,40,sedimento,visao_computacional
+BL-016,2026-11-17,98,folhas,visao_computacional
+BL-017,2026-11-17,28,folhas e lixo,vistoria_equipe
+BL-018,2026-11-17,85,lixo plástico,visao_computacional
+BL-019,2026-11-16,67,lixo plástico,visao_computacional
+BL-020,2026-11-14,29,sedimento,visao_computacional
+BL-021,2026-11-01,60,folhas e lixo,vistoria_equipe
+BL-022,2026-11-15,8,sedimento,visao_computacional
+BL-023,2026-11-17,77,lixo plástico,visao_computacional
+BL-024,2026-11-17,7,lixo plástico,visao_computacional
+BL-025,2026-11-17,41,folhas,vistoria_equipe
+BL-026,2026-11-14,48,lixo plástico,visao_computacional
+BL-027,2026-11-14,98,folhas e lixo,visao_computacional
+BL-028,2026-11-15,65,lixo plástico,visao_computacional
+BL-029,2026-11-17,61,entulho,vistoria_equipe
+BL-030,2026-11-15,19,folhas,visao_computacional
+BL-031,2026-11-17,17,lixo plástico,visao_computacional
+BL-032,2026-11-17,11,entulho,visao_computacional
+BL-033,2026-11-17,13,entulho,vistoria_equipe
+BL-034,2026-11-14,90,folhas,visao_computacional
+BL-035,2026-11-17,34,lixo plástico,visao_computacional
+BL-001,2026-11-08,20,folhas,vistoria_equipe
+BL-004,2026-11-16,abc,lixo plástico,visao_computacional
+BL-005,2026-11-16,150,entulho,visao_computacional
+BL-999,2026-11-16,55,folhas,visao_computacional
+BL-006,31/02/2026,60,sedimento,vistoria_equipe
+,2026-11-16,40,folhas,visao_computacional

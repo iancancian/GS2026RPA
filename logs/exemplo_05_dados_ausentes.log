@@ -1,0 +1,7 @@
+2026-11-18 17:05:04,206 INFO    bocadelobo.pipeline | === Execução Boca de Lobo | data_ref=2026-11-17 | regras v1.0 | dry_run=False ===
+2026-11-18 17:05:04,248 INFO    bocadelobo.pipeline | [1/5] Obtendo previsão de chuva
+2026-11-18 17:05:04,248 INFO    bocadelobo.pipeline | Previsão (arquivo:previsao_tempestade.json): 73.0 mm/24h, pico 21.0 mm/h, prob. 92% -> nível ALERTA
+2026-11-18 17:05:04,248 INFO    bocadelobo.pipeline | [2/5] Carregando e validando dados
+2026-11-18 17:05:04,248 WARNING bocadelobo.pipeline | Usando dados CSV simulados; alertas são apenas demonstração, não publicar.
+2026-11-18 17:05:04,248 ERROR   bocadelobo.pipeline | Execução interrompida (FALHA_DADOS): Arquivo de entrada indisponível: bueiros.csv (No such file or directory)
+2026-11-18 17:05:04,273 INFO    bocadelobo.alerts | Rascunho gravado na outbox: 2026-11-17|operacao|FALHA_DADOS|-

@@ -1,0 +1,37 @@
+bueiro_id,bairro,logradouro,latitude,longitude
+BL-001,Mooca,"Rua da Mooca, 100",-23.559485,-46.6013
+BL-002,Mooca,"Av. Paes de Barros, 140",-23.5624,-46.599714
+BL-003,Mooca,"Rua Taquari, 180",-23.558708,-46.596086
+BL-004,Mooca,"Rua da Mooca, 220",-23.557463,-46.600804
+BL-005,Mooca,"Av. Paes de Barros, 260",-23.561225,-46.601262
+BL-006,Mooca,"Rua Taquari, 300",-23.562851,-46.597457
+BL-007,Ipiranga,"Av. Nazaré, 100",-23.592388,-46.612109
+BL-008,Ipiranga,"Rua Bom Pastor, 140",-23.587401,-46.60934
+BL-009,Ipiranga,"Rua Silva Bueno, 180",-23.590836,-46.608986
+BL-010,Ipiranga,"Av. Nazaré, 220",-23.586125,-46.613648
+BL-011,Ipiranga,"Rua Bom Pastor, 260",-23.586153,-46.608115
+BL-012,Ipiranga,"Rua Silva Bueno, 300",-23.589878,-46.612456
+BL-013,Vila Prudente,"Av. Anhaia Mello, 100",-23.583942,-46.581807
+BL-014,Vila Prudente,"Rua do Orfanato, 140",-23.590858,-46.583726
+BL-015,Vila Prudente,"Rua Oratório, 180",-23.58482,-46.57967
+BL-016,Vila Prudente,"Av. Anhaia Mello, 220",-23.585143,-46.578662
+BL-017,Vila Prudente,"Rua do Orfanato, 260",-23.58731,-46.576715
+BL-018,Vila Prudente,"Rua Oratório, 300",-23.588572,-46.580084
+BL-019,Penha,"Av. Penha de França, 100",-23.526365,-46.541052
+BL-020,Penha,"Rua Dr. João Ribeiro, 140",-23.526106,-46.541381
+BL-021,Penha,"Rua Candapuí, 180",-23.527363,-46.545633
+BL-022,Penha,"Av. Penha de França, 220",-23.531177,-46.543685
+BL-023,Penha,"Rua Dr. João Ribeiro, 260",-23.532362,-46.544138
+BL-024,Penha,"Rua Candapuí, 300",-23.532192,-46.543776
+BL-025,Tatuapé,"Rua Tuiuti, 100",-23.539415,-46.577081
+BL-026,Tatuapé,"Av. Radial Leste, 140",-23.541539,-46.578324
+BL-027,Tatuapé,"Rua Serra de Botucatu, 180",-23.542364,-46.572507
+BL-028,Tatuapé,"Rua Tuiuti, 220",-23.539316,-46.575127
+BL-029,Tatuapé,"Av. Radial Leste, 260",-23.543131,-46.574167
+BL-030,Tatuapé,"Rua Serra de Botucatu, 300",-23.543193,-46.576964
+BL-031,Cambuci,"Rua Lavapés, 100",-23.562884,-46.62188
+BL-032,Cambuci,"Av. Lacerda Franco, 140",-23.566344,-46.621523
+BL-033,Cambuci,"Rua Independência, 180",-23.564057,-46.620792
+BL-034,Cambuci,"Rua Lavapés, 220",-23.568968,-46.626743
+BL-035,Cambuci,"Av. Lacerda Franco, 260",-23.568276,-46.624858
+BL-036,Cambuci,"Rua Independência, 300",-23.569112,-46.619457

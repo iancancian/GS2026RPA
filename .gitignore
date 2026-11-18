@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+.env
+output/
+logs/bocadelobo.log*
+*.egg-info/
+build/
+dist/

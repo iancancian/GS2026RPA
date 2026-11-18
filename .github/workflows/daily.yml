@@ -1,0 +1,67 @@
+name: Execução diária do robô
+
+on:
+  schedule:
+    - cron: "0 9 * * *" # 06:00 em Brasília (UTC-3)
+  workflow_dispatch:
+
+jobs:
+  executar:
+    # Não executa com a base sintética. Habilite o schedule só após publicar a
+    # fila atualizada da Visão como artefato/arquivo disponível no checkout.
+    if: github.event_name == 'workflow_dispatch' || (vars.BL_PRODUCTION_ENABLED == 'true' && vars.BL_VISAO_ACTION_QUEUE != '' && vars.BL_VISAO_AREAS != '')
+    runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: src
+      BL_WEBHOOK_URL: ${{ secrets.BL_WEBHOOK_URL }}
+      BL_VISAO_ACTION_QUEUE: ${{ vars.BL_VISAO_ACTION_QUEUE }}
+      BL_VISAO_AREAS: ${{ vars.BL_VISAO_AREAS }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Validar configuração da origem
+        run: |
+          if [ -n "$BL_VISAO_ACTION_QUEUE" ] && [ -z "$BL_VISAO_AREAS" ]; then
+            echo "BL_VISAO_AREAS também deve ser configurada."
+            exit 1
+          fi
+          if [ -z "$BL_VISAO_ACTION_QUEUE" ] && [ -n "$BL_VISAO_AREAS" ]; then
+            echo "BL_VISAO_ACTION_QUEUE também deve ser configurada."
+            exit 1
+          fi
+      # Preserva o SQLite entre execuções para manter a idempotência dos alertas
+      - uses: actions/cache@v4
+        with:
+          path: output
+          key: bocadelobo-output-${{ github.run_id }}
+          restore-keys: bocadelobo-output-
+      - name: Validar fonte de visão configurada
+        if: github.event_name == 'schedule'
+        run: |
+          test -f "$BL_VISAO_ACTION_QUEUE"
+          test -f "$BL_VISAO_AREAS"
+      - name: Executar com fila atualizada da Visão
+        if: env.BL_VISAO_ACTION_QUEUE != '' && env.BL_VISAO_AREAS != ''
+        run: python -m bocadelobo executar --visao-action-queue "$BL_VISAO_ACTION_QUEUE" --visao-areas "$BL_VISAO_AREAS"
+      - name: Demonstração manual com snapshot e previsão de exemplo
+        if: github.event_name == 'workflow_dispatch' && env.BL_VISAO_ACTION_QUEUE == ''
+        run: |
+          python -m bocadelobo executar \
+            --visao-action-queue data/samples/vision_action_queue.json \
+            --visao-areas data/samples/areas_risco_visao.csv \
+            --previsao-arquivo data/samples/previsao_tempestade.json \
+            --agora 2026-11-17T09:00:00+00:00
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: resultado-${{ github.run_id }}
+          path: |
+            output/prioridades.json
+            output/lista_limpeza.csv
+            output/rejeitados.csv
+            output/outbox_alertas.jsonl
+            logs/bocadelobo.log

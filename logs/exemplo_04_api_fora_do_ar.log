@@ -1,0 +1,8 @@
+2026-11-18 17:04:51,470 INFO    bocadelobo.pipeline | === Execução Boca de Lobo | data_ref=2026-11-17 | regras v1.0 | dry_run=False ===
+2026-11-18 17:04:51,516 INFO    bocadelobo.pipeline | [1/5] Obtendo previsão de chuva
+2026-11-18 17:04:53,554 WARNING bocadelobo.forecast | Previsão: tentativa 1/3 falhou (ProxyError)
+2026-11-18 17:04:57,605 WARNING bocadelobo.forecast | Previsão: tentativa 2/3 falhou (ProxyError)
+2026-11-18 17:05:03,653 WARNING bocadelobo.forecast | Previsão: tentativa 3/3 falhou (ProxyError)
+2026-11-18 17:05:03,653 WARNING bocadelobo.forecast | Cache de previsão ausente ou inválido.
+2026-11-18 17:05:03,747 ERROR   bocadelobo.pipeline | Execução interrompida (FALHA_PREVISAO): API de previsão indisponível após retentativas.
+2026-11-18 17:05:03,884 INFO    bocadelobo.alerts | Rascunho gravado na outbox: 2026-11-17|operacao|FALHA_PREVISAO|-

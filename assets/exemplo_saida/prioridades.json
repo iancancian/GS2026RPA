@@ -1,0 +1,124 @@
+{
+  "execucao_id": 1,
+  "data_ref": "2026-11-17",
+  "status": "RASCUNHOS_GERADOS",
+  "nivel_chuva": "ALERTA",
+  "previsao": {
+    "inicio": "2026-11-17T00:00:00",
+    "horas": 24,
+    "chuva_mm": 73.0,
+    "pico_horario_mm": 21.0,
+    "prob_max_pct": 92,
+    "fonte": "arquivo:previsao_tempestade.json"
+  },
+  "prioridades": [
+    {
+      "posicao": 1,
+      "bueiro_id": "BUEIRO-008",
+      "bairro": "Setor periferico C (simulado)",
+      "logradouro": "Referência da inspeção: test_0027_IMG_20250627_181511_jpg.rf.ff8b598c4c3d014c27cebc825a7f19f6.jpg",
+      "latitude": -23.68,
+      "longitude": -46.78,
+      "entupimento_pct": 41.3,
+      "classe": "PARCIAL",
+      "score": 50.6,
+      "tipo_residuo": "folha|lixo",
+      "inspecao_desatualizada": false,
+      "dentro_da_capacidade": true,
+      "equipe": 1,
+      "human_approval_required": true
+    },
+    {
+      "posicao": 2,
+      "bueiro_id": "BUEIRO-012",
+      "bairro": "Setor baixo A (simulado)",
+      "logradouro": "Referência da inspeção: test_0022_IMG_0978_jpg.rf.cc9203a05d55161e94e336c2ff9b6f07.jpg",
+      "latitude": -23.55,
+      "longitude": -46.63,
+      "entupimento_pct": 10.0,
+      "classe": "PARCIAL",
+      "score": 35.0,
+      "tipo_residuo": "",
+      "inspecao_desatualizada": false,
+      "dentro_da_capacidade": true,
+      "equipe": 2,
+      "human_approval_required": true
+    },
+    {
+      "posicao": 3,
+      "bueiro_id": "BUEIRO-007",
+      "bairro": "Setor medio B (simulado)",
+      "logradouro": "Referência da inspeção: test_0033_IMG_20250627_182743_jpg.rf.4b00e5cc87833788d3f95ea1a24a1ecf.jpg",
+      "latitude": -23.6,
+      "longitude": -46.7,
+      "entupimento_pct": 26.4,
+      "classe": "PARCIAL",
+      "score": 25.2,
+      "tipo_residuo": "folha|lixo",
+      "inspecao_desatualizada": false,
+      "dentro_da_capacidade": true,
+      "equipe": 1,
+      "human_approval_required": true
+    },
+    {
+      "posicao": 4,
+      "bueiro_id": "BUEIRO-001",
+      "bairro": "Setor medio B (simulado)",
+      "logradouro": "Referência da inspeção: test_0092_IMG_7883-1-_JPG.rf.621edef2d7fa7727f58af016d6ac3934.jpg",
+      "latitude": -23.6,
+      "longitude": -46.7,
+      "entupimento_pct": 10.0,
+      "classe": "PARCIAL",
+      "score": 17.0,
+      "tipo_residuo": "lixo|pedra",
+      "inspecao_desatualizada": false,
+      "dentro_da_capacidade": true,
+      "equipe": 2,
+      "human_approval_required": true
+    },
+    {
+      "posicao": 5,
+      "bueiro_id": "BUEIRO-010",
+      "bairro": "Setor medio B (simulado)",
+      "logradouro": "Referência da inspeção: test_0026_IMG_20250627_181332_jpg.rf.44d0f033d87994063be0ec06033c6f13.jpg",
+      "latitude": -23.6,
+      "longitude": -46.7,
+      "entupimento_pct": 10.0,
+      "classe": "PARCIAL",
+      "score": 17.0,
+      "tipo_residuo": "folha",
+      "inspecao_desatualizada": false,
+      "dentro_da_capacidade": true,
+      "equipe": 1,
+      "human_approval_required": true
+    }
+  ],
+  "bueiros_sem_inspecao": [
+    "BUEIRO-002",
+    "BUEIRO-004",
+    "BUEIRO-011"
+  ],
+  "alertas": [
+    {
+      "chave": "2026-11-17|equipe|TODOS|ALERTA",
+      "audiencia": "equipe_limpeza",
+      "bairro": "TODOS",
+      "nivel": "ALERTA",
+      "mensagem": "[RASCUNHO - REVISÃO HUMANA | BOCA DE LOBO - ALERTA] Chuva prevista: 73 mm em 24h, pico de 21 mm/h. Validar em campo antes de qualquer ação:\n1. [PARCIAL 41%] BUEIRO-008 - Referência da inspeção: test_0027_IMG_20250627_181511_jpg.rf.ff8b598c4c3d014c27cebc825a7f19f6.jpg (Setor periferico C (simulado)) - equipe 1\n2. [PARCIAL 10%] BUEIRO-012 - Referência da inspeção: test_0022_IMG_0978_jpg.rf.cc9203a05d55161e94e336c2ff9b6f07.jpg (Setor baixo A (simulado)) - equipe 2\n3. [PARCIAL 26%] BUEIRO-007 - Referência da inspeção: test_0033_IMG_20250627_182743_jpg.rf.4b00e5cc87833788d3f95ea1a24a1ecf.jpg (Setor medio B (simulado)) - equipe 1\n4. [PARCIAL 10%] BUEIRO-001 - Referência da inspeção: test_0092_IMG_7883-1-_JPG.rf.621edef2d7fa7727f58af016d6ac3934.jpg (Setor medio B (simulado)) - equipe 2\n5. [PARCIAL 10%] BUEIRO-010 - Referência da inspeção: test_0026_IMG_20250627_181332_jpg.rf.44d0f033d87994063be0ec06033c6f13.jpg (Setor medio B (simulado)) - equipe 1"
+    },
+    {
+      "chave": "2026-11-17|moradores|Setor baixo A (simulado)|ALERTA",
+      "audiencia": "moradores",
+      "bairro": "Setor baixo A (simulado)",
+      "nivel": "ALERTA",
+      "mensagem": "[RASCUNHO - NÃO PUBLICADO | ALERTA] Setor baixo A (simulado): chuva prevista, 73 mm em 24h, pico de 21 mm/h. Inspeções que requerem avaliação: BUEIRO-012. A localização exata não está disponível neste protótipo. Confirme o local e aprove antes de divulgar; não atravesse áreas alagadas. Emergências: Defesa Civil 199 | Bombeiros 193."
+    },
+    {
+      "chave": "2026-11-17|moradores|Setor periferico C (simulado)|ALERTA",
+      "audiencia": "moradores",
+      "bairro": "Setor periferico C (simulado)",
+      "nivel": "ALERTA",
+      "mensagem": "[RASCUNHO - NÃO PUBLICADO | ALERTA] Setor periferico C (simulado): chuva prevista, 73 mm em 24h, pico de 21 mm/h. Inspeções que requerem avaliação: BUEIRO-008. A localização exata não está disponível neste protótipo. Confirme o local e aprove antes de divulgar; não atravesse áreas alagadas. Emergências: Defesa Civil 199 | Bombeiros 193."
+    }
+  ]
+}
