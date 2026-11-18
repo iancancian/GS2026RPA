@@ -114,4 +114,4 @@ Não há dados pessoais de moradores no protótipo; segredos só por ambiente; l
 ## Links
 
 - Vídeo demonstrativo: será publicado antes da entrega final
-- Repositório: [github.com/iancancian/GS2026ACV](https://github.com/iancancian/GS2026ACV)
+- Repositório: [github.com/iancancian/GS2026RPA](https://github.com/iancancian/GS2026RPA)
